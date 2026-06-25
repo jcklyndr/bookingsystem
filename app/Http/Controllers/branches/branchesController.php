@@ -16,19 +16,26 @@ use Session;
 class branchesController extends Controller
 {
 
-    
-    public function roomspaservices($id){ //function_name
+    public function roomspaservices(Request $request, $id) 
+    {
+        $getroomspaservices = roomspa::where('branch_id', $id)
+                                    ->orderBy('id', 'desc')
+                                    ->paginate(4); 
 
-        $getroomspaservices = roomspa::select()->orderBy('id','desc')->take(6)->where('branch_id', $id)->get();
+        if ($request->ajax()) {
+            return view('branches.partials.spa_list', ['roomspa' => $getroomspaservices])->render();
+        }
 
-        return view('branches.roomspaservices',compact ('getroomspaservices'));
+        return view('branches.roomspaservices', [
+            'roomspa' => $getroomspaservices, 
+            'getroomspaservices' => $getroomspaservices
+        ]);
     }
 
-    public function servicedetails($id){ //function_name
-
+    public function servicedetails($id)
+    {
         $getservicesdetails = roomspa::find($id);
-
-        return view('branches.servicesdetails',compact ('getservicesdetails'));
+        return view('branches.servicesdetails', compact('getservicesdetails'));
     }
 
     public function servicebooking(Request $request, $roomspa_id)

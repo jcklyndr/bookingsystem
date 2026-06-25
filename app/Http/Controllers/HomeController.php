@@ -14,24 +14,25 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // } accessing welcome page to
+
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+    
         $branches = branches::orderBy('id', 'asc')->paginate(4);
         $roomspa = roomspa::orderBy('maxpeeps', 'asc')->paginate(4);
         
+        if ($request->ajax()) {
+            return view('branches.partials.spa_list', ['roomspa' => $roomspa])->render();
+        }
+        
         return view('home', compact('branches', 'roomspa'));
     }
-    
     
 
     public function about()
