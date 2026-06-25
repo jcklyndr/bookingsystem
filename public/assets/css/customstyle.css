@@ -1,0 +1,435 @@
+:root {
+  --bs-primary: #42604e;
+  --bs-bg-dark: #012610;
+}
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY OVERRIDE (Playfair Display & Poppins)
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
+.navbar-brand,
+.card-title,
+.heading {
+  font-family: "Playfair Display", serif !important;
+  font-optical-sizing: auto;
+}
+
+/* body,
+p,
+span,
+a,
+input,
+button,
+select,
+textarea {
+  font-family: "Poppins", sans-serif !important;
+} */
+
+/* 3. Siguraduhing maayos ang timbang (weight) ng mga talata batay sa ni-load mong Google Fonts */
+p {
+  font-weight: 400; /* Normal weight ng Poppins */
+  line-height: 1.6; /* Para mas madaling basahin */
+}
+
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+.bg-dark {
+  background-color: var(--bs-bg-dark) !important;
+}
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+/* ==========================================================================
+   BOOTSTRAP 5 CUSTOM PRIMARY BUTTON OVERRIDE (SAGE GREEN THEME)
+   ========================================================================== */
+
+.btn-primary {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: #42604e;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #354d3e;
+  --bs-btn-hover-border-color: #2f4437;
+
+  --bs-btn-focus-shadow-rgb: 53, 77, 62;
+
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #293b30;
+  --bs-btn-active-border-color: #223128;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+
+  /* --- Disabled State (Kapag bawal i-click ang button) --- */
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: #809689;
+  --bs-btn-disabled-border-color: #809689;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--bs-primary);
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+
+  --bs-btn-focus-shadow-rgb: 66, 96, 78;
+
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #354d3e;
+  --bs-btn-active-border-color: #2f4437;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+
+  --bs-btn-disabled-color: var(--bs-primary);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #809689;
+}
+
+.form-control:focus,
+.form-select:focus {
+  color: #212529 !important;
+  background-color: #ffffff !important;
+  border-color: #42604e !important;
+  outline: 0 !important;
+
+  box-shadow: 0 0 0 0.25rem rgba(66, 96, 78, 0.25) !important;
+}
+
+.form-check-input:checked {
+  background-color: #42604e !important;
+  border-color: #42604e !important;
+}
+
+.form-check-input:focus {
+  border-color: #42604e !important;
+  box-shadow: 0 0 0 0.25rem rgba(66, 96, 78, 0.25) !important;
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus,
+.form-check-input.is-invalid:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* pagination */
+.pagination {
+  --bs-pagination-color: var(--bs-primary);
+  --bs-pagination-bg: #ffffff;
+  --bs-pagination-border-color: #dee2e6;
+
+  --bs-pagination-hover-color: #354d3e;
+  --bs-pagination-hover-bg: #e9ecef;
+  --bs-pagination-hover-border-color: #dee2e6;
+
+  --bs-pagination-active-color: #ffffff;
+  --bs-pagination-active-bg: var(--bs-primary);
+  --bs-pagination-active-border-color: var(--bs-primary);
+  --bs-pagination-focus-shadow-rgb: 66, 96, 78;
+}
+
+.ajax-pagination nav p,
+.ajax-pagination nav .text-sm {
+  display: none !important;
+}
+
+.ajax-pagination nav .pagination {
+  display: flex !important;
+  margin-bottom: 0;
+  padding-left: 0;
+  justify-content: center;
+  width: 100%;
+}
+
+.ajax-pagination nav {
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* ==========================================================================
+  HOMEPAGE
+   ========================================================================== */
+
+.hero-custom {
+  min-height: 100vh;
+  background-image: url("../images/bghome.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.overlap-section {
+  margin-top: -200px;
+  z-index: 10;
+}
+
+.overlap-section .card {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.playfair-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.spa-header-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--bs-primary);
+}
+
+.spa-card {
+  border-radius: 4px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.spa-card-img {
+  background-size: cover;
+  background-position: center;
+  min-height: 250px;
+}
+
+.spa-stars {
+  color: #42604e;
+}
+
+.card-title-link {
+  transition: color 0.2s ease;
+}
+.card-title-link:hover {
+  color: #42604e !important;
+}
+
+.spa-btn {
+  --bs-btn-color: #42604e;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #42604e;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #42604e;
+  --bs-btn-hover-border-color: #42604e;
+
+  --bs-btn-focus-shadow-rgb: 66, 96, 78;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #354d3e;
+  --bs-btn-active-border-color: #2f4437;
+
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.spa-btn:hover .spa-btn-icon,
+.spa-btn:active .spa-btn-icon,
+.spa-btn:focus .spa-btn-icon {
+  color: #ffffff !important;
+}
+
+.custom-line {
+  width: 60px;
+  height: 3px;
+}
+
+/* ==========================================================================
+   CHATBOT
+   ========================================================================== */
+
+.chatbot-btn {
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+}
+
+.chatbot-popup {
+  width: 350px;
+  max-height: 450px;
+  transition: all 0.3s ease-in-out;
+}
+
+.chatbot-body {
+  height: 250px;
+}
+
+.chatbot-avatar {
+  width: 35px;
+  height: 35px;
+}
+
+.chatbot-popup.hidden {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* footer */
+.footer-social-icons .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--bs-primary);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-social-icons .social-link:hover {
+  background-color: var(--bs-primary);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+  ABOUT PAGE
+   ========================================================================== */
+
+.custom-about-hero {
+  /* Tinatawag ang asset gamit ang relative URL mula sa public/assets/css/ path */
+  background-image: url("../images/aboutus.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 320px; /* Saktong taas para hindi sumasadsad ang text */
+  width: 100%;
+}
+
+.hero-overlay {
+  background-color: rgba(15, 32, 23, 0.65);
+  z-index: 1;
+}
+
+.custom-hero-z {
+  z-index: 2;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.min-vh-35 {
+  min-height: 25vh;
+}
+
+.tracking-wider {
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+  .custom-about-hero {
+    min-height: 220px;
+  }
+  .custom-about-hero h1 {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* ==========================================================================
+  SERVICES PAGE
+   ========================================================================== */
+
+.card-body ul li i {
+  font-size: 0.85rem;
+  line-height: inherit;
+}
+
+.carousel-testimony .quote {
+  width: 40px;
+  height: 40px;
+  background: rgba(66, 96, 78, 0.1);
+  border-radius: 50%;
+  color: #42604e;
+  display: inline-flex !important;
+}
+
+.carousel-testimony .item {
+  height: 100%;
+  display: flex;
+}
+.carousel-testimony .testimony-wrap {
+  width: 100%;
+}
+
+/* ==========================================================================
+   OASIS PROJECT - CONTACT PAGE STYLING REFIT
+   ========================================================================== */
+
+.custom-contact-info {
+  background-color: var(--bs-primary);
+}
+
+.contact-icon-box {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  font-size: 0.95rem;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5' stroke-dasharray='4'/%3e%3cpath stroke-width='2' stroke-linecap='round' d='M6 3v3.5M6 9h.01'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.tracking-wider {
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   LOGIN
+   ========================================================================== */
+
+.custom-login-bg {
+  background-image:
+    linear-gradient(rgba(15, 32, 23, 0.7), rgba(15, 32, 23, 0.7)),
+    url("../images/image_2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-color: #ced4da;
+  color: #6c757d;
+}
+
+#togglePassword:focus {
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+}
+
+#togglePassword {
+  border-color: #ced4da;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#togglePassword:hover {
+  background-color: #e9ecef !important;
+  color: #212529 !important;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
