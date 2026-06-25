@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content" data-scrollax-parent="true">
             <div class="col-md-11 ftco-animate">
-                <h2 class="subheading" style="color: #033504;font-weight:bold;">Welcome to OASIS</h2>
+                <h2 class="subheading fw-bolder custom-color">Welcome to OASIS</h2>
                 <h1 class="">Embark on a journey of relaxation with our On-The-Go spa retreats near airports.</h1>
                 <p><a href="{{route('about')}}" class="btn btn-primary-custom">Learn more</a> <a href="{{route('contact.form')}}" class="btn btn-white">Contact us</a></p>
             </div>

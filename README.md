@@ -1,6 +1,49 @@
 # Spa Booking System — OASIS
 
-A web-based booking system for spa appointments built with Laravel.
+# OASIS: On-The-Go Spa Relaxation System
+
+OASIS is an innovative, web-based spa reservation platform designed specifically for travelers. Located near major airports, OASIS allows busy commuters and jet-setters to seamlessly browse, schedule, and pay for relaxing spa treatments right from their phones or laptops before they even arrive at their destination.
+
+---
+
+## 🚀 Key Features
+
+### 🏢 Admin Management Dashboard
+
+Designed for OASIS administrators to oversee operations smoothly from a single centralized hub:
+
+- **Branch Status Tracking:** Real-time monitoring and updating of branch availability.
+- **Service Configuration:** Easily add, modify, or remove spa treatments, packages, and pricing details.
+- **Reservation Analytics:** Track the total number of bookings and revenue metrics across all locations.
+
+### 📅 Easy Booking System
+
+- **Pre-arrival Scheduling:** Enables users to book spa treatments ahead of time to align perfectly with their flight schedules.
+- **Cross-Device Compatibility:** Responsive web design that works beautifully on both laptops and mobile smartphones.
+
+### 💆 Browse Services
+
+- **Diverse Service Catalog:** Users can explore a wide spectrum of curated treatments tailored to travel stress, ranging from quick, express massages to comprehensive, deeply rejuvenating spa experiences.
+- **Detailed Views:** Check room types (e.g., _Mt. Pinatubo Haven_, _Davao Oasis_), capacities, unique scenic views, and clear pricing upfront.
+
+### 💳 Secure Online Payments
+
+- **PayPal Integration:** Features a fast, trusted, and secure payment gateway for immediate booking confirmation, minimizing hassles at the front desk.
+
+### 🔐 Role-Based Access Control (RBAC)
+
+- **Secure Authentication:** Ensures data privacy and system integrity by distinguishing user permissions (e.g., Customers vs. Administrators) and restricting dashboard features accordingly.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Backend:** _(Insert your backend framework here, e.g., Node.js / Python Django / PHP)_
+- **Database:** _(Insert your database here, e.g., MySQL / PostgreSQL / MongoDB)_
+- **Payment Gateway:** PayPal REST APIs
+
+---
 
 ## Requirements
 
