@@ -1,140 +1,109 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+<section class="ftco-section bg-light py-5 d-flex align-items-center min-vh-100">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-11">
+                
+                <div class="card border-0 shadow rounded-3 overflow-hidden">
+                    <div class="row g-0">
+                        
+                        <div class="col-md-6 d-none d-md-block custom-login-bg">
+                            <div class="h-100 w-100 d-flex flex-column justify-content-end p-5 text-white">
+                                <h2 class="fw-bold text-white text-shadow mb-2">OASIS System</h2>
+                                <p class="small text-white-50 text-shadow mb-0">Experience tranquility on the move. Your gateway to exclusive relaxation parameters.</p>
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                        <div class="col-md-6 bg-white d-flex align-items-center">
+                            <div class="card-body p-4 p-md-5 w-100">
+                                
+                                <div class="mb-4">
+                                    <h3 class="fw-bold text-dark mb-1">Welcome Back</h3>
+                                    <p class="text-muted small">Please input your login credentials below to continue.</p>
                                 </div>
+
+                                <form action="{{ route('login') }}" method="POST">
+                                    @csrf
+                                    <div class="row g-3">
+                                        
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label class="form-label small fw-semibold text-secondary" for="email">Email Address</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light border-end-0 text-muted"><i class="fa-solid fa-envelope"></i></span>
+                                                    <input id="email" type="email" placeholder="example@email.com" class="form-control py-2 border-start-0 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                                    @error('email')
+                                                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label class="form-label small fw-semibold text-secondary" for="password">Password</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text bg-light border-end-0 text-muted"><i class="fa-solid fa-lock"></i></span>
+                                                    <input id="password" type="password" placeholder="••••••••" class="form-control py-2 border-start-0 border-end-0 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                                    <button class="btn btn-outline-light bg-light border-start-0 border-top border-bottom border-end text-muted px-3" type="button" id="togglePassword">
+                                                        <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                                                    </button>
+                                                    @error('password')
+                                                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 pt-2">
+                                            <button type="submit" class="btn btn-primary w-100 py-2.5 fw-semibold tracking-wider">
+                                                Login Account
+                                            </button>
+                                        </div>
+
+                                        <div class="col-12 text-center mt-3">
+                                            <span class="small text-muted">Are you a system manager?</span>
+                                            <a href="{{ route('view.login') }}" class="small text-success fw-semibold text-decoration-none ms-1">Login as Admin</a>
+                                        </div>
+
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
-</div> --}}
+</section>
 
-<div class="hero-wrap js-fullheight" style="margin-top: -25px; background-image: url('{{asset ('assets/images/image_2.jpg')}}');" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-        <div class="col-md-7 ftco-animate">
-            <!-- <h2 class="subheading">Welcome to Vacation Rental</h2>
-            <h1 class="mb-4">Rent an appartment for your vacation</h1>
-          <p><a href="#" class="btn btn-primary">Learn more</a> <a href="#" class="btn btn-white">Contact us</a></p> -->
-        </div>
-      </div>
-    </div>
-  </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+    const eyeIcon = document.querySelector('#eyeIcon');
 
-  <section class="ftco-section ftco-book ftco-no-pt ftco-no-pb">
-      <div class="container">
-          <div class="row justify-content-middle" style="margin-left: 397px;">
-              <div class="col-md-6 mt-5">
-                      <form action="{{ route('login') }}" method="POST" class="appointment-form" style="margin-top: -568px;">
-                        @csrf
-                          <h3 class="mb-3">Login</h3>
-                          <div class="row">
-                              <div class="col-md-12">
-                                  <div class="form-group">
-                                    <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                  </div>
-                              </div>
-                             
-                              <div class="col-md-12">
-                                  <div class="form-group">
-                                    <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                  </div>
-                              </div>
-                              
-                          
-                          
-                              <div class="col-md-12">
-                                  <div class="form-group">
-                                      <input type="submit" value="Login" class="btn btn-primary-custom py-3 px-4">
-                                  </div>
-                              </div>
-
-                              <div class="col-md-12">
-                                <div class="form-group">
-                                    <a href="{{ route('view.login') }}" class="btn btn-primary-custom py-3 px-4">Login as Admin</a>
-                                </div>
-                            </div>
-                            
-                          </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </section>
+    togglePassword.addEventListener('click', function () {
+        // I-toggle ang input type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        
+        // I-toggle ang icon looks gamit ang Font Awesome classes
+        if (type === 'text') {
+            eyeIcon.classList.remove('fa-eye');
+            eyeIcon.classList.add('fa-eye-slash');
+        } else {
+            eyeIcon.classList.remove('fa-eye-slash');
+            eyeIcon.classList.add('fa-eye');
+        }
+    });
+});
+</script>
 
 @endsection

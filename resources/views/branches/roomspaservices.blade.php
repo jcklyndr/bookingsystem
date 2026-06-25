@@ -33,7 +33,7 @@
                       <li><span>Bed:</span> {{$sparooms->bed}}</li>
                       <li><span>Price:</span> {{$sparooms->price}}</li>
                   </ul>
-                    <p class="pt-1"><a href="{{route('branches.roomspaservices.details', $sparooms->id)}}" class="btn-custom px-3 py-2">View Details <span class="icon-long-arrow-right"></span></a></p>
+                    <p class="pt-1"><a href="{{route('branches.roomspaservices.details', $sparooms->id)}}" class="btn btn-primary px-3 py-2">View Details <span class="icon-long-arrow-right"></span></a></p>
                 </div>
             </div>
         </div>

@@ -1,38 +1,74 @@
 @extends('layouts.admin')
 
-<!--@@section('content')-->
+@section('content')
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="row w-100 justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-body p-4 p-md-5">
+                    
+                    <h3 class="card-title text-center mb-5 fw-bold text-dark text-uppercase tracking-wide">Login Admin</h3>
+                    
+                    @if(session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+                            <i class="fa-solid fa-circle-exclamation me-2"></i>{{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
 
-<div class="container" style="margin-top:12%;padding:auto">
-  <div class="row justify-content-middle" style="margin-left: 300px;">
-        <div class="card" style="width:70%">
-            <div class="card-body" style="width: 100%">
-                <h5 class="card-title mt-5" style="text-align: center">Login Admin</h5>
-                @if(session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                <form method="POST" class="p-auto" action="{{ route('see.login') }}">
-                    @csrf
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="email" name="email" id="form2Example1" class="form-control" placeholder="Email" />
-                    </div>
+                    <form method="POST" action="{{ route('see.login') }}">
+                        @csrf
+                        
+                        <div class="mb-4">
+                            <label for="adminEmail" class="form-label small fw-bold text-secondary text-uppercase">Email Address</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bg-white border-end-0 text-muted">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input type="email" name="email" id="adminEmail" class="form-control border-start-0 ps-0 fs-6" placeholder="admin@oasis.com" required value="{{ old('email') }}" />
+                            </div>
+                        </div>
 
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                        <input type="password" name="password" id="form2Example2" placeholder="Password" class="form-control" required />
-                    </div>
+                        <div class="mb-5">
+                            <label for="adminPassword" class="form-label small fw-bold text-secondary text-uppercase">Password</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bg-white border-end-0 text-muted">
+                                    <i class="fa-solid fa-lock"></i>
+                                </span>
+                                <input type="password" name="password" id="adminPassword" placeholder="••••••••" class="form-control border-start-0 border-end-0 ps-0 fs-6" required />
+                                <button class="btn btn-outline-secondary bg-white border-start-0 text-muted" type="button" id="togglePassword">
+                                    <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
 
-                    <!-- Submit button -->
-                    <div class="col-md-12">
-                          <input type="submit" value="Login" id="btn" class="btn btn-primary py-3 px-4" style="width: 100%; padding-right: 10px;padding-left: 10px;background-color: #3498db;border:#3498db">                         
-                      </div>
-                  </div>
-                </form>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold shadow-sm text-uppercase fs-6">
+                                <i class="fa-solid fa-right-to-bracket me-2"></i>Sign In
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!--@@endsection-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#adminPassword');
+        const eyeIcon = document.querySelector('#eyeIcon');
+
+        if (togglePassword && passwordInput && eyeIcon) {
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+    });
+</script>
+@endsection
