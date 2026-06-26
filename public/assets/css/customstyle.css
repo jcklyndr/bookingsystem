@@ -1,6 +1,10 @@
 :root {
   --bs-primary: #42604e;
   --bs-bg-dark: #012610;
+  --bs-linear-gradient: linear-gradient(
+    rgba(15, 32, 23, 0.7),
+    rgba(15, 32, 23, 0.1)
+  );
 }
 
 /* ==========================================================================
@@ -39,8 +43,8 @@ textarea {
 
 /* 3. Siguraduhing maayos ang timbang (weight) ng mga talata batay sa ni-load mong Google Fonts */
 p {
-  font-weight: 400; /* Normal weight ng Poppins */
-  line-height: 1.6; /* Para mas madaling basahin */
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .bg-primary {
@@ -73,7 +77,6 @@ p {
   --bs-btn-active-border-color: #223128;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 
-  /* --- Disabled State (Kapag bawal i-click ang button) --- */
   --bs-btn-disabled-color: #ffffff;
   --bs-btn-disabled-bg: #809689;
   --bs-btn-disabled-border-color: #809689;
@@ -125,6 +128,23 @@ p {
 .form-check-input.is-invalid:focus {
   border-color: #dc3545 !important;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-primary) !important;
+  color: #ffffff !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #2c4236 !important; /* Mas madilim na green kapag pinindot */
+  color: #ffffff !important;
+}
+
+.dropdown-item:hover i,
+.dropdown-item:focus i {
+  color: #ffffff !important;
 }
 
 /* pagination */
@@ -400,9 +420,7 @@ p {
    ========================================================================== */
 
 .custom-login-bg {
-  background-image:
-    linear-gradient(rgba(15, 32, 23, 0.7), rgba(15, 32, 23, 0.7)),
-    url("../images/image_2.jpg");
+  background-image: var(--bs-linear-gradient), url("../images/image_2.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -432,4 +450,47 @@ p {
 
 .text-shadow {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   ROOMSPA SERVICES
+   ========================================================================== */
+
+.custom-roomspaservices-hero {
+  background-image: var(--bs-linear-gradient), url("../images/image_2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 320px; /* Saktong taas para hindi sumasadsad ang text */
+  width: 100%;
+}
+
+.form-custom-z {
+  z-index: 10;
+}
+.details-custom-bg {
+  background-image: var(--bs-linear-gradient), url("../images/homepagebg2.jpg");
+  min-height: 350px;
+  background-size: cover;
+}
+
+/* ==========================================================================
+   PAYMENT
+   ========================================================================== */
+
+.payment-custom-bg {
+  background-image: var(--bs-linear-gradient), url("../images/paymentbg.jpg");
+  position: relative;
+}
+
+/* success */
+
+.success-fullscreen-bg {
+  background-image: var(--bs-linear-gradient), url("../images/room-3.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 100% !important;
+  min-height: 100vh;
+  position: relative;
 }
